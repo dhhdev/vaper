@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Vaper
+GenericName=E-liquid Calculator
+Comment=Keep track of e-liquid recipes and get measurements for making batches
+Categories=Utility;Chemistry;
+Exec=com.github.dhhdev.vaper
+Icon=application-default-icon
+Terminal=false
+Type=Application
+Keywords=Vaping;Calculator;Recipes;Book;
