@@ -1,24 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
 	<schema id="com.github.dhhdev.vaper" path="/com/github/dhhdev/vaper/">
 		<key name="window-x" type="i">
 				<default>-1</default>
-				<summary>Window position</summary>
+				<summary>Window horizontal position</summary>
 				<description>The x axis of window position</description>
 		</key>
 		<key name="window-y" type="i">
 				<default>-1</default>
-				<summary>Window position</summary>
+				<summary>Window vertical position</summary>
 				<description>The y axis of window position</description>
 		</key>
-		<key name="window-height" type="i">
+		<key name="window-width" type="i">
 				<default>600</default>
 				<summary>Window position</summary>
-				<description>The height of the window</description>
+				<description>The width of the window</description>
 		</key>
-		<key name="window-width" type="i">
+		<key name="window-height" type="i">
 				<default>400</default>
 				<summary>Window position</summary>
-				<description>The width of the window</description>
+				<description>The height of the window</description>
 		</key>
 	</schema>
 </schemalist>
