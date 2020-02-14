@@ -19,21 +19,18 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-public class Application : Gtk.Application {
-    public Application () {
+public class Vaper.Window : Gtk.ApplicationWindow {
+    public Window (Application app) {
         Object (
-            application_id: "com.github.dhhdev.vaper",
-            flags: ApplicationFlags.FLAGS_NONE
+            application: app
         );
     }
 
-    protected override void activate () {
-        var window = new Vaper.Window (this);
-        add_window(window);
-    }
+    construct {
+        title = "Vaper";
+        set_default_size(600, 400);
+        window_position = Gtk.WindowPosition.CENTER;
 
-    public static int main (string[] args) {
-        var vaper = new Application ();
-        return vaper.run (args);
+        show_all ();
     }
 }
