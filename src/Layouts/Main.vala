@@ -19,20 +19,43 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-public class Vaper.Window : Gtk.ApplicationWindow {
+public class Vaper.Layouts.Main : Gtk.ApplicationWindow {
     private GLib.Settings settings;
 
-    public Window (Application app) {
+    public Vaper.HeaderBar header_bar;
+    public Vaper.Views.Welcome welcome;
+
+    public Main (Application app) {
         Object (
             application: app
         );
     }
 
     construct {
-        title = "Vaper";
-        set_default_size(600, 400);
+        /*
+         * Setting Gtk.HeaderBar with HeaderBar.vala
+         */
+        header_bar = new Vaper.HeaderBar (this);
+        set_titlebar (header_bar);
+
+        /*
+         * Default size and positioning on screen.
+         */
+        set_default_size (600, 400);
         window_position = Gtk.WindowPosition.CENTER;
 
+        /*
+         * Welcome Screen
+         */
+        welcome = new Vaper.Views.Welcome (this);
+        add (welcome);
+
+        init_settings ();
+
+        show_all ();
+    }
+
+    public void init_settings () {
         settings = new GLib.Settings ("com.github.dhhdev.vaper");
         move (
             settings.get_int ("window-x"),
@@ -46,8 +69,6 @@ public class Vaper.Window : Gtk.ApplicationWindow {
         delete_event.connect (e => {
             return before_destroy ();
         });
-
-        show_all ();
     }
 
     public bool before_destroy () {

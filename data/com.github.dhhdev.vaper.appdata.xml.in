@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk> -->
+<component type="desktop">
+    <id>com.github.dhhdev.vaper</id>
+    <metadata_license>GPLv3</metadata_license>
+    <name>Vaper</name>
+    <summary>The way to save and share your best e-liquid recips</summary>
+    <description>
+        <p>A quick way to calculate your next e-liquid batch and save your favorite recips.</p>
+    </description>
+</component>

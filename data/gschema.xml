@@ -21,5 +21,10 @@
 				<summary>Window position</summary>
 				<description>The height of the window</description>
 		</key>
+		<key name="dark-theme" type="b">
+			<default>false</default>
+			<summary>Use dark theme</summary>
+			<description>Switch between Light and Dark theme.</description>
+		</key>
 	</schema>
 </schemalist>

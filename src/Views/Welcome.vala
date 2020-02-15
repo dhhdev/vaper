@@ -19,27 +19,20 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-namespace Vaper.CONSTANTS {
-    public const string APP_NAME = "Vaper";
-}
+public class Vaper.Views.Welcome : Granite.Widgets.Welcome {
+    public unowned Vaper.Layouts.Main window { get; construct; }
 
-public class Vaper.Application : Gtk.Application {
-    public Vaper.Layouts.Main main_window;
-
-    public Application () {
+    public Welcome (Vaper.Layouts.Main main_window) {
         Object (
-            application_id: "com.github.dhhdev.vaper",
-            flags: ApplicationFlags.FLAGS_NONE
+            window: main_window,
+            title: _("Welcome to Vaper"),
+			subtitle: _("Save and create your favorite e-liquid recipes.")
         );
     }
 
-    protected override void activate () {
-        main_window = new Vaper.Layouts.Main (this);
-        add_window (main_window);
-    }
-
-    public static int main (string[] args) {
-        var vaper = new Application ();
-        return vaper.run (args);
+    construct {
+        valign = Gtk.Align.FILL;
+        halign = Gtk.Align.FILL;
+        vexpand = true;
     }
 }

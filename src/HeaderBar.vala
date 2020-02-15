@@ -19,27 +19,30 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-namespace Vaper.CONSTANTS {
-    public const string APP_NAME = "Vaper";
-}
+public class Vaper.HeaderBar : Gtk.HeaderBar {
+    public weak Vaper.Layouts.Main window { get; construct; }
 
-public class Vaper.Application : Gtk.Application {
-    public Vaper.Layouts.Main main_window;
-
-    public Application () {
+    public HeaderBar (Vaper.Layouts.Main window) {
         Object (
-            application_id: "com.github.dhhdev.vaper",
-            flags: ApplicationFlags.FLAGS_NONE
+			window: window
         );
+        
+        set_title (Vaper.CONSTANTS.APP_NAME);
+        set_show_close_button (true);
     }
 
-    protected override void activate () {
-        main_window = new Vaper.Layouts.Main (this);
-        add_window (main_window);
-    }
+    construct {
+        var gtk_settings = Gtk.Settings.get_default ();
 
-    public static int main (string[] args) {
-        var vaper = new Application ();
-        return vaper.run (args);
+        var mode_switch = new Granite.ModeSwitch.from_icon_name (
+            "display-brightness-symbolic",
+            "weather-clear-night-symbolic"
+        );
+        mode_switch.primary_icon_tooltip_text = ("Light background");
+        mode_switch.secondary_icon_tooltip_text = ("Dark background");
+        mode_switch.valign = Gtk.Align.CENTER;
+        mode_switch.bind_property ("active", gtk_settings, "gtk_application_prefer_dark_theme");
+
+        pack_end (mode_switch);
     }
 }
