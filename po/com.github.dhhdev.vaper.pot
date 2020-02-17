@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.dhhdev.vaper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-15 12:20+0100\n"
+"POT-Creation-Date: 2020-02-15 23:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,49 +17,25 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Widgets/HeaderBar.vala:31 data/com.github.dhhdev.vaper.desktop.in:3
-#: data/com.github.dhhdev.vaper.appdata.xml.in:6
-msgid "Vaper"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:35
-msgid "New Recipe"
-msgstr ""
-
-#: src/Widgets/Window.vala:55
-msgid "Welcome"
-msgstr ""
-
-#: src/Widgets/Window.vala:56
-msgid "About"
-msgstr ""
-
-#: src/Layouts/About.vala:25
+#: src/Views/About.vala:28
 msgid "About Vaper"
 msgstr ""
 
-#: src/Layouts/About.vala:26
-msgid "Your e-liquid recipe book and measurments tool for making batches."
+#: src/Views/About.vala:29
+msgid "History behind Vaper and much more."
 msgstr ""
 
-#: src/Layouts/About.vala:30 src/Layouts/Welcome.vala:30
-msgid "Add New Recipe"
-msgstr ""
-
-#: src/Layouts/About.vala:30
-msgid "Maybe this one will be your favorite."
-msgstr ""
-
-#: src/Layouts/Welcome.vala:25
+#: src/Views/Welcome.vala:28
 msgid "Welcome to Vaper"
 msgstr ""
 
-#: src/Layouts/Welcome.vala:26
-msgid "Your e-liquid recipe book."
+#: src/Views/Welcome.vala:29
+msgid "Save and create your favorite e-liquid recipes."
 msgstr ""
 
-#: src/Layouts/Welcome.vala:30
-msgid "Create your new favorite recipe."
+#: data/com.github.dhhdev.vaper.desktop.in:3
+#: data/com.github.dhhdev.vaper.appdata.xml.in:6
+msgid "Vaper"
 msgstr ""
 
 #: data/com.github.dhhdev.vaper.desktop.in:4

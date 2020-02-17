@@ -1,7 +1,8 @@
 src/Application.vala
-src/Widgets/HeaderBar.vala
-src/Widgets/Window.vala
-src/Layouts/About.vala
-src/Layouts/Welcome.vala
+src/HeaderBar.vala
+src/Layouts/Main.vala
+src/Layouts/Paned.vala
+src/Views/About.vala
+src/Views/Welcome.vala
 data/com.github.dhhdev.vaper.desktop.in
 data/com.github.dhhdev.vaper.appdata.xml.in

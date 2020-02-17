@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.dhhdev.vaper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-15 12:20+0100\n"
-"PO-Revision-Date: 2020-02-15 12:05+0100\n"
+"POT-Creation-Date: 2020-02-15 23:35+0100\n"
+"PO-Revision-Date: 2020-02-15 23:35+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: da\n"
@@ -17,50 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/HeaderBar.vala:31 data/com.github.dhhdev.vaper.desktop.in:3
-#: data/com.github.dhhdev.vaper.appdata.xml.in:6
-msgid "Vaper"
-msgstr "Vaper"
-
-#: src/Widgets/HeaderBar.vala:35
-msgid "New Recipe"
-msgstr "Ny Opskrift"
-
-#: src/Widgets/Window.vala:55
-msgid "Welcome"
-msgstr "Velkommen"
-
-#: src/Widgets/Window.vala:56
-msgid "About"
-msgstr "Om"
-
-#: src/Layouts/About.vala:25
+#: src/Views/About.vala:28
 msgid "About Vaper"
 msgstr "Om Vaper"
 
-#: src/Layouts/About.vala:26
-msgid "Your e-liquid recipe book and measurments tool for making batches."
-msgstr "Din e-væske opskriftsbog og beregner for at lave væsker."
+#: src/Views/About.vala:29
+msgid "History behind Vaper and much more."
+msgstr "Historien bag Vaper og meget mere."
 
-#: src/Layouts/About.vala:30 src/Layouts/Welcome.vala:30
-msgid "Add New Recipe"
-msgstr "Tilføj ny Opksrift"
-
-#: src/Layouts/About.vala:30
-msgid "Maybe this one will be your favorite."
-msgstr "Måske den her bliver din favorit."
-
-#: src/Layouts/Welcome.vala:25
+#: src/Views/Welcome.vala:28
 msgid "Welcome to Vaper"
 msgstr "Velkommen til Vaper"
 
-#: src/Layouts/Welcome.vala:26
-msgid "Your e-liquid recipe book."
-msgstr "Din e-væske opskriftsbog."
+#: src/Views/Welcome.vala:29
+msgid "Save and create your favorite e-liquid recipes."
+msgstr "Gem og lav dine favorit e-væske opskrifter."
 
-#: src/Layouts/Welcome.vala:30
-msgid "Create your new favorite recipe."
-msgstr "Lav din næste favorit opskrift."
+#: data/com.github.dhhdev.vaper.desktop.in:3
+#: data/com.github.dhhdev.vaper.appdata.xml.in:6
+msgid "Vaper"
+msgstr "Vaper"
 
 #: data/com.github.dhhdev.vaper.desktop.in:4
 msgid "E-liquid Calculator"

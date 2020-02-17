@@ -20,68 +20,82 @@
 */
 
 public class Vaper.Layouts.Main : Gtk.ApplicationWindow {
-    private GLib.Settings settings;
+    public weak Vaper.Application app_vaper { get; construct; }
 
     public Vaper.HeaderBar header_bar;
-    public Vaper.Views.Welcome welcome;
+    public Vaper.Layouts.Paned paned_content;
 
-    public Main (Application app) {
+    public Main (Vaper.Application app_vaper) {
         Object (
-            application: app
+            application: app_vaper
         );
     }
 
     construct {
         /*
+         * CSS Provider
+         */
+        var css_provider = new Gtk.CssProvider ();
+		css_provider.load_from_resource ("/com/github/dhhdev/vaper/stylesheet.css");
+
+		Gtk.StyleContext.add_provider_for_screen (
+			Gdk.Screen.get_default (), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+        
+        /*
+         * Is dark theme preffered?
+         */
+        Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.dark_theme;
+
+        /*
          * Setting Gtk.HeaderBar with HeaderBar.vala
          */
         header_bar = new Vaper.HeaderBar (this);
         set_titlebar (header_bar);
+        set_border_width (0);
 
         /*
-         * Default size and positioning on screen.
+         * Main UI (Gtk.Pane and Gtk.Stack)
          */
-        set_default_size (600, 400);
-        window_position = Gtk.WindowPosition.CENTER;
+        paned_content = new Vaper.Layouts.Paned (this);
+        add (paned_content);
 
         /*
-         * Welcome Screen
+         * Settings
          */
-        welcome = new Vaper.Views.Welcome (this);
-        add (welcome);
-
         init_settings ();
 
+        /*
+         * Connect Destroy Method
+         */
+        delete_event.connect (before_destroy);
+
+        /*
+         * Show Window
+         */
         show_all ();
     }
 
     public void init_settings () {
-        settings = new GLib.Settings ("com.github.dhhdev.vaper");
-        move (
-            settings.get_int ("window-x"),
-            settings.get_int ("window-y")
-        );
-        resize (
-            settings.get_int ("window-width"),
-            settings.get_int ("window-height")
-        );
-
-        delete_event.connect (e => {
-            return before_destroy ();
-        });
+        move (settings.window_x, settings.window_y);
+        resize (settings.window_width, settings.window_height);
     }
 
     public bool before_destroy () {
+        update_settings ();
+
+        return false;
+    }
+
+    public void update_settings () {
         int width, height, x, y;
 
         get_size (out width, out height);
         get_position (out x, out y);
 
-        settings.set_int ("window-x", x);
-        settings.set_int ("window-y", y);
-        settings.set_int ("window-width", width);
-        settings.set_int ("window-height", height);
-
-        return false;
+        settings.window_x = x;
+        settings.window_y = y;
+        settings.window_width = width;
+		settings.window_height = height;
     }
 }

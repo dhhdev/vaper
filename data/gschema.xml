@@ -26,5 +26,10 @@
 			<summary>Use dark theme</summary>
 			<description>Switch between Light and Dark theme.</description>
 		</key>
+		<key name="measurement-mode" type="i">
+			<default>1</default>
+			<summary>Default measurement mode</summary>
+			<description>Either set to measureing by volume or mg/ml. Default is mg/ml.</description>
+		</key>
 	</schema>
 </schemalist>

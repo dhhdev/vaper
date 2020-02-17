@@ -19,8 +19,9 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-namespace Vaper.CONSTANTS {
-    public const string APP_NAME = "Vaper";
+namespace Vaper {
+    public Vaper.Services.Settings settings;
+    public const string _APP_NAME = "Vaper";
 }
 
 public class Vaper.Application : Gtk.Application {
@@ -31,6 +32,10 @@ public class Vaper.Application : Gtk.Application {
             application_id: "com.github.dhhdev.vaper",
             flags: ApplicationFlags.FLAGS_NONE
         );
+    }
+
+    construct {
+        settings = new Vaper.Services.Settings ();
     }
 
     protected override void activate () {

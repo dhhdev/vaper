@@ -19,22 +19,16 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-public class Vaper.Views.Welcome : Granite.Widgets.Welcome {
-    public unowned Vaper.Layouts.Main window { get; construct; }
+public class Vaper.Services.Settings : Granite.Services.Settings {
+    public int window_x { get; set; }
+    public int window_y { get; set; }
+    public int window_width { get; set; }
+    public int window_height { get; set; }
+    public bool dark_theme { get; set; }
+    public int measurement_mode { get; set; }
+    public string measurement_mode_text;
 
-    public Welcome (Vaper.Layouts.Main main_window) {
-        Object (
-            window: main_window,
-            title: _("Welcome to Vaper"),
-			subtitle: _("Save and create your favorite e-liquid recipes.")
-        );
-    }
-
-    construct {
-        valign = Gtk.Align.FILL;
-        halign = Gtk.Align.FILL;
-        vexpand = true;
-
-        show ();
+    public Settings () {
+        base ("com.github.dhhdev.vaper");
     }
 }

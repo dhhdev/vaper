@@ -25,6 +25,14 @@ i18n.merge_file(
     install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
+# Include the gnome module
+gnome = import('gnome')
+asresources = gnome.compile_resources(
+    'as-resources', 'data/assets.gresource.xml',
+    source_dir: 'data',
+    c_name: 'as'
+)
+
 subdir('src')
 subdir('data')
 subdir('po')

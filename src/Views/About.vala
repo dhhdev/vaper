@@ -19,14 +19,14 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-public class Vaper.Views.Welcome : Granite.Widgets.Welcome {
+public class Vaper.Views.About : Granite.Widgets.Welcome {
     public unowned Vaper.Layouts.Main window { get; construct; }
 
-    public Welcome (Vaper.Layouts.Main main_window) {
+    public About (Vaper.Layouts.Main main_window) {
         Object (
             window: main_window,
-            title: _("Welcome to Vaper"),
-			subtitle: _("Save and create your favorite e-liquid recipes.")
+            title: _("About Vaper"),
+			subtitle: _("History behind Vaper and much more.")
         );
     }
 
@@ -34,7 +34,5 @@ public class Vaper.Views.Welcome : Granite.Widgets.Welcome {
         valign = Gtk.Align.FILL;
         halign = Gtk.Align.FILL;
         vexpand = true;
-
-        show ();
     }
 }

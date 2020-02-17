@@ -19,22 +19,7 @@
 * Authored by: Daniel Hyldebrandt Hemmingsen <daniel@dhhit.dk>
 */
 
-public class Vaper.Views.Welcome : Granite.Widgets.Welcome {
-    public unowned Vaper.Layouts.Main window { get; construct; }
-
-    public Welcome (Vaper.Layouts.Main main_window) {
-        Object (
-            window: main_window,
-            title: _("Welcome to Vaper"),
-			subtitle: _("Save and create your favorite e-liquid recipes.")
-        );
-    }
-
-    construct {
-        valign = Gtk.Align.FILL;
-        halign = Gtk.Align.FILL;
-        vexpand = true;
-
-        show ();
-    }
+.create-recipi-root,
+.card {
+	padding: 10pt;
 }
